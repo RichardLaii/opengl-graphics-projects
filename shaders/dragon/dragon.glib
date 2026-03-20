@@ -1,0 +1,17 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+Texture2D 5 fire.bmp
+Texture2D 6 water.bmp
+
+Vertex   dragon.vert
+Fragment dragon.frag
+Program  Dragon						\
+	TexUnitA 5							\
+	TexUnitB 6							\
+	uPower <-0.004. 0.001. 20.>			\
+	MorphFactor <-5. 0. 1.>			\
+	uBlend <0. 0. 1.>
+
+Obj dragon138.obj
