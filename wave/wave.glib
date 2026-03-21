@@ -1,0 +1,49 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 5 0 0 0 0 1 0
+Timer 60
+
+Vertex   texture.vert
+Fragment texture.frag
+Program  Texture  TexUnit 6
+
+Texture2D  6  BeachRight.bmp
+QuadYZ 5. 5. 10 10
+Texture2D  6  BeachLeft.bmp
+QuadYZ -5. 5. 10 10
+Texture2D  6  BeachTop.bmp
+QuadXZ 5. 5. 10 10
+Texture2D  6  BeachBottom.bmp
+QuadXZ -5. 5. 10 10
+Texture2D  6  BeachFront.bmp
+QuadXY 5. 5. 10 10
+Texture2D  6  BeachBack.bmp
+QuadXY -5. 5. 10 10
+
+
+CubeMap 6 BeachRight.bmp BeachLeft.bmp BeachTop.bmp BeachBottom.bmp BeachFront.bmp BeachBack.bmp
+CubeMap 7 BeachRight.bmp BeachLeft.bmp BeachTop.bmp BeachBottom.bmp BeachFront.bmp BeachBack.bmp
+
+Vertex wave.vert
+Fragment wave.frag
+Program wave \
+			uReflectUnit 6  uRefractUnit 7  \
+			uTimeScale <1. 2. 100.> \
+			uwave <0. 0. 4.> \
+\
+			uTemp <-1. 0.5 1.>\
+			uEta  <.1 0.6 5.>  				\
+		    uMix <0. 0.4 1.>				\
+\
+			uAm0 <0. .2 1.> \
+			uKm0 <0.1 1. 5.> \
+			uGamma0 <-1.57080 0. 1.57080> \
+\
+			uLightX <-20. 0. 20.> \
+			uLightY <1. 10. 20.> \
+			uLightZ <-20. -20. 20.> \
+			uNoiseAmp <0. 0. 1.> \
+			uNoiseFreq <.1 .1 2.> 
+
+QuadXZ  -3  3.  300 300
+Translate 0. -1. 0.
